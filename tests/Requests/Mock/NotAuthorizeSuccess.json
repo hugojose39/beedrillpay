@@ -1,0 +1,133 @@
+{
+    "id": "or_28dN9w7CLU79kDjL",
+    "code": "62LVFN7I4R",
+    "amount": 2990,
+    "currency": "BRL",
+    "closed": true,
+    "items": [
+        {
+            "id": "oi_d478RMAS3bC74PrL",
+            "description": "Chaveiro do Tesseract",
+            "amount": 2990,
+            "quantity": 1,
+            "status": "active",
+            "code": "abc"
+        }
+    ],
+    "customer": {
+        "name": "Tony Stark",
+        "email": "avengerstark@ligadajustica.com.br",
+        "document": "12345678901",
+        "type": "individual",
+        "address": {
+            "line_1": "375, Av. General Justo, Centro",
+            "line_2": "8º andar",
+            "zip_code": "20021130",
+            "city": "Rio de Janeiro",
+            "state": "RJ",
+            "country": "BR"
+        },
+        "phones": {
+            "home_phone": {
+                "country_code": "55",
+                "area_code": "21",
+                "number": "000000000"
+            },
+            "mobile_phone": {
+                "country_code": "55",
+                "area_code": "21",
+                "number": "000000000"
+            }
+        }
+    },
+    "shipping": {
+        "amount": 100,
+        "description": "Stark",
+        "recipient_name": "Tony Stark",
+        "recipient_phone": "24586787867",
+        "address": {
+            "line_1": "10880, Malibu Point, Malibu Central",
+            "zip_code": "90265",
+            "city": "Malibu",
+            "state": "CA",
+            "country": "US"
+        }
+    },
+    "status": "paid",
+    "created_at": "2017-04-19T16:01:09Z",
+    "updated_at": "2017-04-19T16:01:11Z",
+    "closed_at": "2017-04-19T16:01:11Z",
+    "charges": [
+        {
+            "id": "ch_gmnW101c9YTvQVLB",
+            "code": "62LVFN7I4R",
+            "gateway_id": "ef5e977b-93d2-485a-b15d-36e5eb3d8cf5",
+            "amount": 2990,
+            "status": "paid",
+            "currency": "BRL",
+            "payment_method": "credit_card",
+            "paid_at": "2017-04-19T16:01:11Z",
+            "created_at": "2017-04-19T16:01:09Z",
+            "updated_at": "2017-04-19T16:01:09Z",
+            "customer": {
+                "id": "cus_eaEXlZvhBfeGlDOm",
+                "name": "Tony Stark",
+                "email": "f1492621-4f39-45f7-adfb-82a373a0a85c@avengers.com",
+                "delinquent": false,
+                "created_at": "2017-04-19T16:01:09Z",
+                "updated_at": "2017-04-19T16:01:09Z"
+            },
+            "last_transaction": {
+                "id": "tran_3RYbBQjcnEcwrGp0",
+                "transaction_type": "credit_card",
+                "funding_source": "prepaid",
+                "gateway_id": "ddab707d-72ba-49f9-b356-f0b9ebfa3039",
+                "amount": 2990,
+                "status": "captured",
+                "success": true,
+                "installments": 1,
+                "statement_descriptor": "AVENGERS",
+                "acquirer_name": "simulator",
+                "acquirer_affiliation_code": "MUNDI",
+                "acquirer_tid": "342793",
+                "acquirer_nsu": "512784",
+                "acquirer_auth_code": "233215",
+                "acquirer_message": "Pagarme|Transação autorizada com sucesso",
+                "acquirer_return_code": "0",
+                "operation_type": "auth_and_capture",
+                "card": {
+                    "id": "card_6xk9deAu2I2MdPzJ",
+                    "first_six_digits": "542501",
+                    "last_four_digits": "8229",
+                    "brand": "Amex",
+                    "holder_name": "Tony Stark",
+                    "exp_month": 1,
+                    "exp_year": 2030,
+                    "status": "active",
+                    "created_at": "2017-04-19T16:01:09Z",
+                    "updated_at": "2017-04-19T16:01:09Z",
+                    "billing_address": {
+                        "line_1": "10880, Malibu Point, Malibu Central",
+                        "zip_code": "90265",
+                        "city": "Malibu",
+                        "state": "CA",
+                        "country": "US"
+                    },
+                    "type": "credit"
+                },
+                "created_at": "2017-04-19T16:01:09Z",
+                "updated_at": "2017-04-19T16:01:09Z",
+                "gateway_response": {
+                    "code": "201"
+                },
+                "antifraud_response": {
+                    "provider_name": "clearsale",
+                    "status": "pending",
+                    "return_code": "",
+                    "return_message": "",
+                    "score": "1"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "ch_6NXoYXyiNfP3A54l",
+  "code": "ABCDE123",
+  "amount": 1490,
+  "paid_amount": 1490,
+  "status": "paid",
+  "currency": "BRL",
+  "payment_method": "credit_card",
+  "paid_at": "2019-01-22T14:31:36Z",
+  "created_at": "2019-01-22T14:30:12Z",
+  "updated_at": "2019-01-22T14:31:36Z",
+  "customer": {
+    "id": "cus_PYwJvWgOTmiqvW8m",
+    "name": "Tony Stark",
+    "email": "toinhodalua@nasa.com",
+    "delinquent": false,
+    "created_at": "2019-01-18T11:50:37Z",
+    "updated_at": "2019-01-18T15:46:38Z",
+    "phones": {}
+  },
+  "last_transaction": {
+    "id": "tran_QGXDnycJdHKnoVa3",
+    "transaction_type": "credit_card",
+    "funding_source": "prepaid",
+    "amount": 1490,
+    "status": "captured",
+    "success": true,
+    "installments": 1,
+    "statement_descriptor": "AVENGERS",
+    "acquirer_tid": "cb42d188-aca6-46f2-a2c9-046cb6342f5d",
+    "acquirer_nsu": "cb42d188-aca6-46f2-a2c9-046cb6342f5d",
+    "acquirer_auth_code": "416",
+    "acquirer_message": "Transação capturada com sucesso",
+    "acquirer_return_code": "00",
+    "operation_type": "capture",
+    "card": {
+      "id": "card_jdK2O53TqfnxwRDY",
+      "first_six_digits": "400000",
+      "last_four_digits": "0010",
+      "brand": "Visa",
+      "holder_name": "Tony Stark",
+      "exp_month": 1,
+      "exp_year": 2020,
+      "status": "active",
+      "type": "credit",
+      "created_at": "2019-01-18T12:25:41Z",
+      "updated_at": "2019-01-22T14:30:12Z"
+    },
+    "created_at": "2019-01-22T14:31:36Z",
+    "updated_at": "2019-01-22T14:31:36Z",
+    "gateway_response": {
+      "code": "200",
+      "errors": []
+    }
+  },
+  "metadata": {
+    "code": "123"
+  }
+}
