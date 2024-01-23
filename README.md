@@ -2,8 +2,7 @@
 
 **Biblioteca de Processamento de Pagamentos Cielo**
 
-![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
-
+![Licença](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
 
 ## Instalar
 
@@ -50,7 +49,7 @@ O seguinte gateway é fornecido por este pacote:
 
     $gateway = BeedrillpayServiceProvider::configure('MerchantId', 'MerchantKey', true);
 
-    Exemplo de cobrança via boleto
+    // Exemplo de cobrança via boleto
 
     $gateway->automaticCapture([
         'MerchantOrderId' => '2014111706',
@@ -91,9 +90,9 @@ O seguinte gateway é fornecido por este pacote:
 
     $gateway = BeedrillpayServiceProvider::configure('MerchantId', 'MerchantKey', true);
 
-    Exemplo de cobrança via Cartão de crédito
+    // Exemplo de cobrança via Cartão de crédito
 
-    $gateway->automaticCapture([
+    $gateway->laterCapture([
         'MerchantOrderId' => '2014111706',
         'Customer' => [
             'Name' => 'Comprador Teste Boleto',
@@ -140,3 +139,7 @@ O seguinte gateway é fornecido por este pacote:
 
     //Em caso de sucesso o token do cartão será fornecido como resposta da api da cielo, em caso de falha uma exceção será retoranada.
 ```
+
+## Licença
+
+Este projeto é licenciado sob a Licença MIT.
