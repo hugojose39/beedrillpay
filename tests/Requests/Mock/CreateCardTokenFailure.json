@@ -1,3 +1,6 @@
-{
-    "message": "Could not renew card."
-}
+[
+	{
+		"Code": 101,
+		"Message": "MerchantId is required"
+	}
+]

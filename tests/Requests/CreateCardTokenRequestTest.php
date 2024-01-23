@@ -10,14 +10,17 @@ use Hugojose39\Beedrillpay\Tests\TestCase;
 
 class CreateCardTokenRequestTest extends TestCase
 {
-    public CreateCardTokenRequest $request;
+    private readonly CreateCardTokenRequest $request;
+    private readonly string $endpoint;
 
     public function setUp(): void
     {
         parent::setUp();
+
+        $this->endpoint = 'https://apisandbox.cieloecommerce.cielo.com.br';
     }
 
-    public function testSuccess()
+    public function testSuccess(): void
     {
         $handler  = new MockHandler();
 
@@ -28,23 +31,23 @@ class CreateCardTokenRequestTest extends TestCase
             )
         );
 
-        $this->request = new CreateCardTokenRequest(new Client(['handler' => $handler]));
+        $this->request = new CreateCardTokenRequest(new Client(['handler' => $handler]), $this->endpoint);
+
         $response = $this->request->create([
-            'apiKey' => 'ApiKey1234',
-            'type' => 'card',
-            'card' => [
-                'number' => '4000000000000010',
-                'exp_month' => '1',
-                'exp_year' => '30'
+            'Card' => [
+                'CustomerName' => 'Comprador Teste Cielo',
+                'CardNumber' => '4532117080573700',
+                'Holder' => 'Comprador T Cielo',
+                'ExpirationDate' => '12/2030',
+                'Brand' => 'Visa',
             ]
         ]);
 
-        $this->assertEquals('token_zVw7rqvHEPH8XlbE', $response['id']);
-        $this->assertEquals('Visa', $response['card']['brand']);
+        $this->assertEquals('db62dc71-d07b-4745-9969-42697b988ccb', $response['CardToken']);
         $this->assertNotNull($response);
     }
 
-    public function testError()
+    public function testError(): void
     {
         $handler  = new MockHandler();
 
@@ -55,17 +58,18 @@ class CreateCardTokenRequestTest extends TestCase
             )
         );
 
-        $this->request = new CreateCardTokenRequest(new Client(['handler' => $handler]));
+        $this->request = new CreateCardTokenRequest(new Client(['handler' => $handler]), $this->endpoint);
+
         $response = $this->request->create([
-            'apiKey' => 'ApiKey1234',
-            'type' => 'card',
-            'card' => [
-                'number' => '4000000000000010',
-                'exp_month' => '1',
-                'exp_year' => '30'
+            'Card' => [
+                'CustomerName' => 'Comprador Teste Cielo',
+                'CardNumber' => '4532117080573700',
+                'Holder' => 'Comprador T Cielo',
+                'ExpirationDate' => '12/2030',
+                'Brand' => 'Visa',
             ]
         ]);
 
-        $this->assertEquals('Could not renew card.', $response['message']);
+        $this->assertEquals('MerchantId is required', $response[0]['Message']);
     }
 }

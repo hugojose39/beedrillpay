@@ -8,7 +8,7 @@ use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\RequestOptions;
 use Hugojose39\Beedrillpay\Exception\BadMethodCallException;
 
-class CreateCardTokenRequest
+class CaptureRequest
 {
     public function __construct(
         private Client $client,
@@ -17,11 +17,11 @@ class CreateCardTokenRequest
     {
     }
 
-    public function create(array $parameters): array
+    public function capture(string $paymentId, ?int $amount = null): array
     {
         try {
-            $request = $this->client->request('POST', $this->endpoint.'/1/card', [
-                RequestOptions::JSON => $parameters['Card'],
+            $request = $this->client->request('PUT', "{$this->endpoint}/1/sales/{$paymentId}/capture", [
+                RequestOptions::QUERY => ['Amount' => $amount],
             ]);
 
             return json_decode($request->getBody(), true);
