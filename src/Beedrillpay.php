@@ -40,6 +40,6 @@ class Beedrillpay
     {
         $request = new CaptureRequest($this->client, $this->endpoint);
 
-        return $request->capture($parameters['paymentId'] ?? '', $parameters['amount'] ?? null);
+        return $request->capture($parameters['PaymentId'] ?? '', $parameters['Amount'] ?? null);
     }
 }
