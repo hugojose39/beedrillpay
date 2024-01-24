@@ -14,6 +14,8 @@ $ composer require hugojose39/beedrillpay
 
 ## Uso Básico
 
+Está biblioteca utiliza o Guzzle para efetuar requisições HTTP.
+
 No topo da classe que irá usar a biblioteca será necessário configurar o seguinte require:
 
 ``` php
