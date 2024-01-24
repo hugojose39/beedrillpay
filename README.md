@@ -2,7 +2,7 @@
 
 **Biblioteca de Processamento de Pagamentos Cielo**
 
-![Licença](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 ## Instalar
 
