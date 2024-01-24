@@ -9,7 +9,7 @@
 Via Composer
 
 ``` bash
-$ composer require hugojose/beedrillpay
+$ composer require hugojose39/beedrillpay
 ```
 
 ## Uso Básico
