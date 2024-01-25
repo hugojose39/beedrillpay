@@ -2,6 +2,8 @@
 
 namespace Hugojose39\Beedrillpay\Exception;
 
-class BadMethodCallException extends BadMethodCallException implements BedrillpayException
+use Exception;
+
+class BadMethodCallException extends Exception implements BedrillpayException
 {
 }
