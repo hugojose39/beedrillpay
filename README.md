@@ -29,7 +29,7 @@ O seguinte gateway é fornecido por este pacote:
     $response = $gateway->cardToken([
         'Card' => [
             'CustomerName' => 'Comprador Teste Cielo',
-            'CardNumber' => '4551870000000183',
+            'CardNumber' => '4024007197692931',
             'Holder' => 'Comprador T Cielo',
             'ExpirationDate' => '12/2030',
             'Brand' => 'Visa',
@@ -114,9 +114,9 @@ O seguinte gateway é fornecido por este pacote:
             'Installments' =>1,
             'SoftDescriptor' =>'123456789ABCD',
             'CreditCard' => [
-                'CardNumber' =>'4551870000000183',
+                'CardNumber' =>'4024007197692931',
                 'Holder' =>'Teste Holder',
-                'ExpirationDate' =>'12/2021',
+                'ExpirationDate' =>'12/2030',
                 'SecurityCode' =>'123',
                 'Brand' =>'Visa'
             ],
