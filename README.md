@@ -29,7 +29,7 @@ O seguinte gateway é fornecido por este pacote:
     $response = $gateway->cardToken([
         'Card' => [
             'CustomerName' => 'Comprador Teste Cielo',
-            'CardNumber' => '4532117080573700',
+            'CardNumber' => '4551870000000183',
             'Holder' => 'Comprador T Cielo',
             'ExpirationDate' => '12/2030',
             'Brand' => 'Visa',
