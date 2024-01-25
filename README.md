@@ -16,12 +16,6 @@ $ composer require hugojose39/beedrillpay
 
 Está biblioteca utiliza o Guzzle para efetuar requisições HTTP.
 
-No topo da classe que irá usar a biblioteca será necessário configurar o seguinte require:
-
-``` php
-require __DIR__.'/vendor/autoload.php';
-```
-
 O seguinte gateway é fornecido por este pacote:
 
  * [Cielo](https://cielo.com.br/)
@@ -32,7 +26,7 @@ O seguinte gateway é fornecido por este pacote:
 
     $gateway = BeedrillpayServiceProvider::configure('MerchantId', 'MerchantKey', true);
 
-    $gateway->cardToken([
+    $response = $gateway->cardToken([
         'Card' => [
             'CustomerName' => 'Comprador Teste Cielo',
             'CardNumber' => '4532117080573700',
@@ -41,6 +35,8 @@ O seguinte gateway é fornecido por este pacote:
             'Brand' => 'Visa',
         ],
     ]);
+
+    echo($response);
 
     //Em caso de sucesso o token do cartão será fornecido como resposta da api da cielo, em caso de falha uma exceção será retoranada.
 ```
@@ -53,7 +49,7 @@ O seguinte gateway é fornecido por este pacote:
 
     // Exemplo de cobrança via boleto
 
-    $gateway->automaticCapture([
+    $response = $gateway->automaticCapture([
         'MerchantOrderId' => '2014111706',
         'Customer' => [
             'Name' => 'Comprador Teste Boleto',
@@ -82,6 +78,8 @@ O seguinte gateway é fornecido por este pacote:
             'Instructions' => 'Aceitar somente até a data de vencimento, após essa data juros de 1% dia.'
         ],
     ]);
+    
+    echo($response);
 
     //Em caso de sucesso o token do cartão será fornecido como resposta da api da cielo, em caso de falha uma exceção será retoranada.
 ```
@@ -94,7 +92,7 @@ O seguinte gateway é fornecido por este pacote:
 
     // Exemplo de cobrança via Cartão de crédito
 
-    $gateway->laterCapture([
+    $response = $gateway->laterCapture([
         'MerchantOrderId' => '2014111706',
         'Customer' => [
             'Name' => 'Comprador Teste Boleto',
@@ -125,6 +123,8 @@ O seguinte gateway é fornecido por este pacote:
         ],
     ]);
 
+    echo($response);
+
     //Em caso de sucesso o token do cartão será fornecido como resposta da api da cielo, em caso de falha uma exceção será retoranada.
 ```
 
@@ -134,10 +134,12 @@ O seguinte gateway é fornecido por este pacote:
 
     $gateway = BeedrillpayServiceProvider::configure('MerchantId', 'MerchantKey', true);
 
-    $gateway->capture([
+    $response = $gateway->capture([
         'Amount' => 1000 // Este valor deve ser em centavo e inteiro.
         'PaymentId' => '1234'
     ]);
+
+    echo($response);
 
     //Em caso de sucesso o token do cartão será fornecido como resposta da api da cielo, em caso de falha uma exceção será retoranada.
 ```
