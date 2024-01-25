@@ -20,9 +20,9 @@ class CaptureRequest
     public function capture(string $paymentId, ?int $amount = null): array
     {
         try {
-            $request = $this->client->request('PUT', "{$this->endpoint}/1/sales/{$paymentId}/capture", [
-                RequestOptions::QUERY => ['Amount' => $amount],
-            ]);
+            $capture = is_null($amount) ? '/capture' : "/capture?amount={$amount}";
+
+            $request = $this->client->request('PUT', "{$this->endpoint}/1/sales/{$paymentId}".$capture);
 
             return json_decode($request->getBody(), true);
         } catch (ClientException $exception) {
